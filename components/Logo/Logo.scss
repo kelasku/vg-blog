@@ -1,0 +1,16 @@
+
+.logo {
+  align-self: center;
+  width: 164px;
+  margin-top: 7px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    width: 40px;
+  }
+}

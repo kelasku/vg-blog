@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- node
+- 10
+script:
+- yarn lint
+- yarn test
+- yarn build
+notifications:
+  email:
+    on_failure: change
+cache:
+  yarn: true
+  directories:
+  - node_modules
+deploy:
+  provider: heroku
+  app: valentingurkov
+  skip_cleanup: true
+  api_key:
+    secure: NtXEpbz7dF36dOYUlEZhZQa0/yKREpvHFz9EoG4o7SlD+xOjAs8MO2SvKmXUepoKkRlTmhtB6Jxk3YTvoCYRjiPK4FQgjFPW2Fq1mwgvq8EDZNYFJDn7HjM5PcCUp8N1Epvxp4Ex3vt2bGqlVOXBeAJ85Py/uYot8r1qWKCH7rBhtTISIxzuxpZxcb9QSgpqaDlj27vIVLLXlRasdz2NblsHot1B8/rAOEDzkVOIyMS42AF4Rdeonk8MiUEJIADBwkbksb1aqUm1p1/8ZrCCYB+R/JfRiODvSc2qnJcCeFj+dq7SNgGF7PxmckhXAsYUYjEppDkz1X3AozpBJXrPmvGbqtUa5JP7hQCTleaMqZ8lOBXKVT9aCrmZ9wYKFYkkOZbM/NvjHu2kX8zdh9fIVzt1guJ4bxuY8xYfIBJM4Tnv/FI9H/W+KZm3/7IS71d+roV1buONLSMitdGIycR/O4IVjOUB6KSWNv830AmWnogxHM1FLXLE7HnQQ4HGwZeslzJGz1QN1ygbRRZNa0gNtv3Ehf3wpL9IsxyFJrpR8nBhBeE53ZGp9yap7jltC2u9LegirR70IFgpN/4LPVx8jO63JJnqkzMIFDiNw8g0I+2OeIpDC2DLY3ox2JaqKq/8PJESp2YnITsRQyRsy5VQAijmP0WCt3OEUkXeld1V6jc=
+branches:
+  only:
+  - master
